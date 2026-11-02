@@ -1,5 +1,5 @@
-// const API_BASE = "https://YOUR-APP-NAME.onrender.com/api/games";
-const API_BASE = "http://localhost:3000/api/games";
+const API_BASE = "https://csci3172lab03.onrender.com/api/games";
+// const API_BASE = "http://localhost:3000/api/games";
 
 const form = document.getElementById("game-form");
 const list = document.getElementById("game-list");
@@ -111,5 +111,4 @@ form.addEventListener("submit", async (e) => {
 
 refreshBtn.addEventListener("click", loadGames);
 
-// Initial load
 loadGames();
