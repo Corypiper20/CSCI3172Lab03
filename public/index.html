@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indie Game Library</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>🎮 Indie Game Library</h1>
+    <p class="subtitle">Track your Steam-style backlog of indie gems.</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Add a Game</h2>
+      <form id="game-form" class="game-form">
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="e.g. Hollow Knight" required />
+        </div>
+
+        <div class="field">
+          <label for="platform">Platform</label>
+          <input type="text" id="platform" name="platform" placeholder="e.g. PC, Switch, PS5" required />
+        </div>
+
+        <div class="field">
+          <label for="status">Status</label>
+          <select id="status" name="status" required>
+            <option value="Playing">Playing</option>
+            <option value="Completed">Completed</option>
+            <option value="Wishlist">Wishlist</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="rating">Rating (0–10)</label>
+          <input type="number" id="rating" name="rating" min="0" max="10" step="0.1" value="8" required />
+        </div>
+
+        <div class="field">
+          <label for="genre">Genre (optional)</label>
+          <input type="text" id="genre" name="genre" placeholder="e.g. Metroidvania" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Game</button>
+      </form>
+
+      <div id="form-message" class="message" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>My Library</h2>
+        <button id="refresh-btn" class="btn btn-secondary">Refresh</button>
+      </div>
+      <div id="game-list" class="game-grid">
+        <p class="empty">Loading...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>CSCI 3172 — Lab 3 · Node.js + Express REST API</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
